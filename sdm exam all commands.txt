@@ -1,0 +1,154 @@
+1. create rpository on github
+
+2.folder in G drive give name open through cmd 
+
+3.git clone (repository path)
+
+4.opend that folder in VS 
+
+5.on cmd -------------->>>>>>>>     npm init
+
+		(fakta enter karat raha)
+
+
+6.install express on cmd---------->>>>>>>>>   npm install express --save
+
+7.create public folder in VS
+
+8. public mdhe index.html banavli
+
+9.mg server.js banvych
+
+		var exp = require('express');
+		var app = exp();
+		var path = require('path');
+
+		app.use(express.static(path.join(__dirname,'public')));
+
+
+		var server = app.listen(9000,function(){
+
+		    console.log("server created");
+
+		});
+
+		app.get("/",function(req,res){
+
+		        res.send({fname:"Gaurav Deshpande"});
+	});
+
+
+10. Dockerfile
+
+FROM  node:18
+WORKDIR /app
+COPY package.json /app
+RUN npm install
+COPY . /app
+CMD node server.js
+EXPOSE 9000
+
+11.   .gitignore
+		
+	node_modules/
+
+12. cmd vr 
+		git add .
+
+13.commit 
+		git commit -m "simplenode"
+
+
+14.push on git
+		git push
+
+15.launch AWS 
+
+	redbutton launch instace
+
+16. name ------->> KnowItvirtual
+
+17. select ubuntu 22
+
+18. create new key pair
+
+	exam
+
+	select .ppk file
+
+19.launch instance
+
+20. click on id
+
+	Success
+	Successfully initiated launch of instance (i-0aa0ec09a7116486b)
+
+21.select our instance
+	--connect-->>new page which will contain our ip address--->>connect vr click
+
+22.open putty 
+
+23. add public ip address from AWS
+
+24. connection data add user name --->>ubuntu
+
+25. conncetion -->> ssh--->>auth--->>credentials   ----add file in private key file ji download zaliye
+							browse karun
+
+26. security alert ---->>>  accept
+
+27.to update linux
+
+	sudo apt update
+
+28.git clone (repository path from github)
+
+
+29. ls
+
+30. cd practiceSDM
+
+31.ls
+
+30. khalchya docker sathichya saglya commands link varun follw kara
+
+	sudo apt update
+	sudo apt install apt-transport-https ca-certificates curl software-properties-common
+	curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+	echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+	
+	sudo apt update
+	apt-cache policy docker-ce
+	sudo apt install docker-ce
+	sudo systemctl status docker
+
+31.parat aws la jaa
+		tyachyat instance la jaun apla instance select kara mg green green disel
+		mg scroll kara security(2nd option ahe) tyala click kara
+		security gruops chya khali ===blue link---->>sg-09e78a865e558bbaf (launch-wizard-2)  <--click
+		actions-->>edit inbound rules--->>add rules
+		all traffic--->>anywhere IPV4
+		save rule
+
+32. go back to putty 
+	control c
+
+33.sudo docker images
+
+34.sudo docker pull hello-world
+
+35 sudo docker pull nginx
+
+36.sudo docker images
+
+37.sudo docker build -t nodeapp .
+
+38.sudo docker run -d -p 9000:9000 nodeapp
+
+39.sudo docker ps -a
+
+40.
+
+
+
+	
